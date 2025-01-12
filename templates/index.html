@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Tambahkan Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='coolcat.jpg') }}" type="image/x-icon">
+    <title>My Profile @_@</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            overflow-y: auto; /* Mengaktifkan scroll vertikal */
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px 40px;
+            text-decoration: none;
+            color: black;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            width: 250px;
+            justify-content: flex-start;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        
+        .btn i {
+            margin-right: 20px;
+            position: absolute;
+            left: 10px;
+        }
+        
+        .btn span {
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .profile {
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile::before, .profile::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            width: 25px;
+            height: 25px;
+            background-color: #000;
+            border-radius: 50%;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .profile::before {
+            left: -15px;
+        }
+
+        .profile::after {
+            right: -15px;
+        }
+
+        /* Responsiveness */
+        @media screen and (max-width: 768px) {
+            .btn {
+                width: 80%;
+            }
+
+            .profile {
+                width: 120px;
+                height: 120px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .links {
+                margin-top: 15px;
+            }
+        }
+
+        @media screen and (max-width: 200px) {
+            .btn {
+                width: 90%;
+                padding: 10px 20px;
+            }
+
+            .profile {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile h1 {
+                font-size: 1.2em;
+            }
+
+            .profile p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/65/a2/9e/65a29e439c7a04fa47805abbc6ca2808.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Yuqii</h1>
+            <p>Hii Welcome!</p>
+        </div>
+        <div class="links">
+            <a href="https://discord.gg/7sQZ99TQ" class="btn">
+                <i class="fab fa-discord"></i> My Discord Server
+            </a>
+            <a href="https://open.spotify.com/user/31zxuwce3jnj5obcjd25y6x4lqqq?si=a4ef7f4068f545c2" class="btn">
+                <i class="fab fa-spotify"></i> My Spotify
+            </a>
+            <a href="https://saweria.co/jrsy4a" class="btn">
+                <i class="fas fa-heart"></i> Support me by donating! (ID)
+            </a>
+            <a href="https://www.tiktok.com/@gonnapushu?_t=ZS-8szbgJwqkqN&_r=1" class="btn">
+                <i class="fab fa-tiktok"></i> My Tiktok 2
+            </a>
+            <a href="https://github.com/Kenzy10" class="btn">
+                <i class="fab fa-github"></i> My GitHub
+            </a>
+        </div>
+    </div>
+</body>
+</html>
