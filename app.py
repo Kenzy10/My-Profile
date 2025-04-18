@@ -1,10 +1,12 @@
 from flask import Flask, render_template
+import os
 
-app = Flask(__name__)  # Gunakan __name__ sebagai argumen untuk Flask
+app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    return render_template("index.html")  # Pastikan file index.html ada di folder templates
+    return render_template('index.html')  # atau ganti sesuai file di /templates
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)  # Tambahkan host="0.0.0.0"
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))  # penting untuk Railway
+    app.run(host='0.0.0.0', port=port)
