@@ -1,4 +1,12 @@
 {
-    "build": "pip install -r requirements.txt",
-    "start": "python app.py"
+    "services": {
+      "web": {
+        "build": {
+          "command": "pip install -r requirements.txt"
+        },
+        "start": {
+          "command": "python app.py"
+        }
+      }
+    }
   }
